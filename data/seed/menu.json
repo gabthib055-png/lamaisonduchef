@@ -1,0 +1,72 @@
+[
+  {
+    "id": "entree_01",
+    "name": "Ceviche d'agrumes",
+    "description": "Bar mariné, huile d'olive fumée, éclats de citron vert.",
+    "price": 16,
+    "category": "Entrées",
+    "pairing": "Vermentino frais et minéral.",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947"
+  },
+  {
+    "id": "entree_02",
+    "name": "Velouté de panais",
+    "description": "Crème légère, noisettes torréfiées, fleur de sel.",
+    "price": 14,
+    "category": "Entrées",
+    "pairing": "Chardonnay élevé sur lies.",
+    "image": "https://images.unsplash.com/photo-1543353071-873f17a7a088"
+  },
+  {
+    "id": "plat_01",
+    "name": "Bar rôti",
+    "description": "Fenouil confit, beurre noisette, jus corsé.",
+    "price": 32,
+    "category": "Plats",
+    "pairing": "Sancerre blanc.",
+    "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288"
+  },
+  {
+    "id": "plat_02",
+    "name": "Risotto d'orge",
+    "description": "Champignons sauvages, parmesan affiné, huile de truffe.",
+    "price": 26,
+    "category": "Plats",
+    "pairing": "Pinot noir léger.",
+    "image": "https://images.unsplash.com/photo-1546069901-eacef0df6022"
+  },
+  {
+    "id": "dessert_01",
+    "name": "Pavlova aux fruits rouges",
+    "description": "Meringue croustillante, crème légère, coulis maison.",
+    "price": 12,
+    "category": "Desserts",
+    "pairing": "Muscat doux.",
+    "image": "https://images.unsplash.com/photo-1481391032119-d89fee407e44"
+  },
+  {
+    "id": "dessert_02",
+    "name": "Crémeux chocolat noir",
+    "description": "Ganache 70%, éclats de cacao, sorbet poire.",
+    "price": 13,
+    "category": "Desserts",
+    "pairing": "Porto rubis.",
+    "image": "https://images.unsplash.com/photo-1484723091739-30a097e8f929"
+  },
+  {
+    "id": "boisson_01",
+    "name": "Infusion signature",
+    "description": "Verveine, gingembre, miel d'acacia.",
+    "price": 6,
+    "category": "Boissons",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836"
+  },
+  {
+    "id": "accord_01",
+    "name": "Accord découverte",
+    "description": "Sélection de trois verres adaptés au menu.",
+    "price": 24,
+    "category": "Accords",
+    "image": "https://images.unsplash.com/photo-1510626176961-4b57d4fbad03"
+  }
+]
