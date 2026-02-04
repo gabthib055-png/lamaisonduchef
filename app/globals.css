@@ -1,21 +1,42 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  
+  --color-ink-950: #0b0b0f;
+  --color-ink-900: #14141c;
+  --color-ink-800: #1f202b;
+  --color-ink-700: #2a2b38;
+  
+  --color-pearl-50: #fbfaf8;
+  --color-pearl-100: #f5f2ed;
+  --color-pearl-200: #e8e1d7;
+  --color-pearl-300: #d9cbbd;
+  --color-pearl-400: #c3af9b;
+  --color-pearl-500: #a78a73;
+  
+  --color-ember-400: #f97316;
+  --color-ember-500: #ea580c;
+  
+  --shadow-glow: 0 10px 30px rgba(234, 88, 12, 0.25);
+  --shadow-card: 0 24px 60px rgba(15, 15, 20, 0.16);
+}
+
 @layer base {
   :root {
     color-scheme: light;
-    --font-serif: "Playfair Display";
-    --font-sans: "Inter";
   }
 
   body {
     @apply bg-pearl-50 text-ink-950 antialiased;
-    font-family: var(--font-sans), system-ui, sans-serif;
+    font-family: var(--font-sans);
   }
 }
 
 @layer utilities {
   .text-serifs {
-    font-family: var(--font-serif), "Times New Roman", serif;
+    font-family: var(--font-serif);
   }
 
   .surface-glass {
