@@ -6,39 +6,35 @@ const featuredDishes = (menuSeed as MenuItem[]).slice(0, 3);
 
 export default function HomePage() {
   return (
-    <div style={{ backgroundColor: '#fbfaf8' }}>
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] overflow-hidden">
+      <section className="relative h-screen">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
             alt="Restaurant ambiance"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-        <div className="relative z-10 flex min-h-[90vh] flex-col items-center justify-center px-6 text-center">
-          <p className="mb-6 text-xs font-medium uppercase tracking-[0.4em] text-white/80">
-            Restaurant gastronomique
-          </p>
-          <h1 className="font-serif max-w-4xl text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
-            Une expérience gastronomique connectée au coeur de Paris
+        <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-32 text-center">
+          <h1 className="max-w-5xl font-serif text-5xl font-medium leading-[1.1] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+            La Maison du Chef
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-            Découvrez une cuisine raffinée où tradition française et innovation digitale 
-            se rencontrent pour sublimer chaque instant de votre repas.
+          <p className="mx-auto mt-8 max-w-xl text-base text-white/80 sm:text-lg">
+            Une expérience gastronomique connectée au coeur de Paris. 
+            Tradition française et innovation digitale.
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <Link
               href="/menu"
-              className="rounded-full px-8 py-4 text-sm font-semibold transition-all duration-300 hover:shadow-lg"
-              style={{ backgroundColor: '#ffffff', color: '#14141c' }}
+              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-medium text-foreground no-underline transition-all duration-300 hover:bg-white/90"
             >
               Découvrir la carte
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border-2 border-white/60 bg-transparent px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-full border border-white/50 bg-transparent px-8 py-4 text-sm font-medium text-white no-underline transition-all duration-300 hover:bg-white/10"
             >
               Réserver une table
             </Link>
@@ -47,49 +43,41 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: '#f5f2ed' }}>
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-16 text-center">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em]" style={{ color: '#636376' }}>
-              Expérience unique
-            </p>
-            <h2 className="font-serif text-3xl font-semibold md:text-4xl" style={{ color: '#14141c' }}>
-              La gastronomie réinventée
+      <section className="bg-background py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-20 max-w-2xl">
+            <span className="mb-4 inline-block text-xs font-medium uppercase tracking-widest text-muted-foreground">
+              Nos engagements principaux
+            </span>
+            <h2 className="font-serif text-4xl font-medium text-foreground md:text-5xl">
+              Allier innovation, durabilité et efficacité
             </h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
             {[
               {
-                title: "Carte Interactive",
-                description: "Explorez notre menu avec des descriptions détaillées, des accords mets-vins et des photos haute définition.",
-                icon: "M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                num: "01",
+                title: "Produits d'exception",
+                description: "Sélection rigoureuse de produits frais et locaux, issus de nos partenaires producteurs.",
               },
               {
-                title: "Commande en Temps Réel",
-                description: "Passez votre commande directement depuis votre table et suivez sa préparation en cuisine.",
-                icon: "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                num: "02",
+                title: "Chef étoilé",
+                description: "Notre chef perpétue l'excellence de la cuisine française avec passion et créativité.",
               },
               {
-                title: "Paiement Simplifié",
-                description: "Réglez l'addition en un clic, divisez entre convives ou utilisez Apple Pay et Google Pay.",
-                icon: "M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"
+                num: "03",
+                title: "Cadre raffiné",
+                description: "Un écrin d'élégance au coeur de Paris pour des moments inoubliables.",
               }
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className="rounded-2xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-                style={{ backgroundColor: '#ffffff' }}
+                className="group bg-card p-10 transition-all duration-500 hover:bg-secondary"
               >
-                <div 
-                  className="mb-6 flex h-14 w-14 items-center justify-center rounded-full"
-                  style={{ backgroundColor: 'rgba(201, 168, 124, 0.2)' }}
-                >
-                  <svg className="h-6 w-6" style={{ color: '#c9a87c' }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={feature.icon} />
-                  </svg>
-                </div>
-                <h3 className="mb-3 text-lg font-semibold" style={{ color: '#14141c' }}>{feature.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#636376' }}>{feature.description}</p>
+                <span className="mb-8 block font-serif text-5xl font-light text-muted-foreground/30">{feature.num}</span>
+                <h3 className="mb-4 text-xl font-medium text-foreground">{feature.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -97,98 +85,89 @@ export default function HomePage() {
       </section>
 
       {/* About Section */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: '#fbfaf8' }}>
-        <div className="mx-auto max-w-6xl">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em]" style={{ color: '#636376' }}>
-                Notre histoire
-              </p>
-              <h2 className="font-serif text-3xl font-semibold md:text-4xl" style={{ color: '#14141c' }}>
-                Une passion transmise de génération en génération
-              </h2>
-              <p className="mt-6 text-base leading-relaxed" style={{ color: '#636376' }}>
-                Depuis 1987, La Maison du Chef perpétue l'art de la cuisine française avec des produits 
-                de saison sélectionnés auprès de producteurs locaux. Notre chef, formé dans les plus 
-                grandes maisons, propose une carte renouvelée chaque mois pour refléter le meilleur 
-                de chaque terroir.
-              </p>
-              <Link
-                href="/restaurant"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold transition-colors duration-200"
-                style={{ color: '#14141c' }}
-              >
-                En savoir plus
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-            <div className="relative">
-              <div className="overflow-hidden rounded-3xl">
-                <img
-                  src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=800&q=80"
-                  alt="Chef en cuisine"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div 
-                className="absolute -bottom-6 -left-6 rounded-2xl p-6 shadow-xl"
-                style={{ backgroundColor: '#14141c', color: '#fbfaf8' }}
-              >
-                <p className="text-3xl font-bold">37</p>
-                <p className="text-sm opacity-80">années d'excellence</p>
-              </div>
-            </div>
+      <section className="relative overflow-hidden">
+        <div className="grid lg:grid-cols-2">
+          <div className="relative aspect-square lg:aspect-auto">
+            <img
+              src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1000&q=80"
+              alt="Chef en cuisine"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center bg-foreground px-8 py-20 text-background md:px-16 lg:px-20">
+            <span className="mb-6 text-xs font-medium uppercase tracking-widest text-background/50">
+              Notre engagement
+            </span>
+            <h2 className="font-serif text-3xl font-medium leading-tight text-background md:text-4xl lg:text-5xl">
+              La Maison du Chef se veut acteur de la transition culinaire
+            </h2>
+            <p className="mt-8 text-base leading-relaxed text-background/70">
+              Depuis 1987, nous perpétuons l'art de la cuisine française avec des produits 
+              de saison sélectionnés auprès de producteurs locaux. Notre chef propose des 
+              solutions durables au service des palais de demain.
+            </p>
+            <Link
+              href="/restaurant"
+              className="mt-10 inline-flex w-fit items-center justify-center rounded-full border border-background bg-transparent px-8 py-3 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-background hover:text-foreground"
+            >
+              Notre engagement
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Featured Dishes */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: '#f5f2ed' }}>
-        <div className="mx-auto max-w-6xl">
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-6xl px-6">
           <div className="mb-16 text-center">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em]" style={{ color: '#636376' }}>
+            <span className="mb-4 inline-block text-sm font-medium uppercase tracking-widest text-amber-600">
               Nos créations
-            </p>
-            <h2 className="font-serif text-3xl font-semibold md:text-4xl" style={{ color: '#14141c' }}>
-              Les incontournables de la carte
+            </span>
+            <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl md:text-5xl">
+              Les signatures du Chef
             </h2>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {featuredDishes.map((dish) => (
               <div
                 key={dish.id}
-                className="group overflow-hidden rounded-3xl shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                style={{ backgroundColor: '#ffffff' }}
+                className="group overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
                   <img
                     src={dish.image}
                     alt={dish.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-stone-800 backdrop-blur-sm">
+                      {dish.category}
+                    </span>
+                  </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold" style={{ color: '#14141c' }}>{dish.name}</h3>
-                  <p className="mt-2 text-sm leading-relaxed" style={{ color: '#636376' }}>{dish.description}</p>
+                  <h3 className="text-xl font-bold text-stone-900">{dish.name}</h3>
+                  <p className="mt-2 line-clamp-2 text-stone-600">{dish.description}</p>
                   {dish.pairing && (
-                    <p className="mt-4 text-xs" style={{ color: '#636376' }}>
-                      <span className="font-semibold" style={{ color: '#14141c' }}>Accord:</span> {dish.pairing}
+                    <p className="mt-4 flex items-center gap-2 text-sm text-stone-500">
+                      <svg className="h-4 w-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      {dish.pairing}
                     </p>
                   )}
-                  <div className="mt-6 flex items-center justify-between">
-                    <p className="text-lg font-bold" style={{ color: '#14141c' }}>{dish.price.toFixed(2)} €</p>
+                  <div className="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
+                    <p className="text-2xl font-bold text-amber-600">{dish.price} €</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <Link
               href="/menu"
-              className="inline-flex rounded-full px-8 py-4 text-sm font-semibold transition-all duration-300 hover:shadow-lg"
-              style={{ backgroundColor: '#14141c', color: '#fbfaf8' }}
+              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-10 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-stone-800 hover:shadow-xl"
             >
               Voir la carte complète
             </Link>
@@ -197,43 +176,41 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 md:py-28" style={{ backgroundColor: '#fbfaf8' }}>
-        <div className="mx-auto max-w-6xl">
-          <div 
-            className="relative overflow-hidden rounded-[40px] px-8 py-20 text-center md:px-16 md:py-24"
-            style={{ backgroundColor: '#14141c' }}
-          >
-            <div className="relative z-10">
-              <p className="mb-6 text-xs font-medium uppercase tracking-[0.4em]" style={{ color: 'rgba(251, 250, 248, 0.7)' }}>
-                Réservation
-              </p>
-              <h2 
-                className="font-serif mx-auto max-w-3xl text-3xl font-semibold md:text-4xl lg:text-5xl"
-                style={{ color: '#fbfaf8' }}
-              >
-                Réservez votre table pour une expérience inoubliable
-              </h2>
-              <p className="mx-auto mt-6 max-w-xl text-base" style={{ color: 'rgba(251, 250, 248, 0.8)' }}>
-                Du mardi au samedi, notre équipe vous accueille dans un cadre élégant 
-                pour un moment de gastronomie unique.
-              </p>
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  href="/contact"
-                  className="rounded-full px-8 py-4 text-sm font-semibold transition-all duration-300 hover:shadow-lg"
-                  style={{ backgroundColor: '#fbfaf8', color: '#14141c' }}
-                >
-                  Réserver maintenant
-                </Link>
-                <a
-                  href="tel:+33123456789"
-                  className="rounded-full border-2 bg-transparent px-8 py-4 text-sm font-semibold transition-all duration-300"
-                  style={{ borderColor: 'rgba(251, 250, 248, 0.4)', color: '#fbfaf8' }}
-                >
-                  +33 1 23 45 67 89
-                </a>
-              </div>
-            </div>
+      <section className="relative overflow-hidden bg-stone-900 py-24">
+        <div className="absolute inset-0 opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1600&q=80"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <span className="mb-4 inline-block text-sm font-medium uppercase tracking-widest text-amber-400">
+            Réservation
+          </span>
+          <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
+            Réservez votre table pour une expérience inoubliable
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-stone-300">
+            Du mardi au samedi, notre équipe vous accueille dans un cadre élégant 
+            pour un moment de gastronomie unique.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-amber-600 px-10 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-amber-700 hover:shadow-xl"
+            >
+              Réserver maintenant
+            </Link>
+            <a
+              href="tel:+33123456789"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-transparent px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +33 1 23 45 67 89
+            </a>
           </div>
         </div>
       </section>

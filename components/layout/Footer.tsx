@@ -1,55 +1,43 @@
 import Link from "next/link";
 
-const footerLinks = {
-  navigation: [
-    { label: "Accueil", href: "/" },
-    { label: "Notre Carte", href: "/menu" },
-    { label: "Le Restaurant", href: "/restaurant" },
-    { label: "Contact", href: "/contact" },
-  ],
-  legal: [
-    { label: "Mentions légales", href: "/mentions-legales" },
-    { label: "Politique de confidentialité", href: "/confidentialite" },
-  ],
-};
-
 export const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#14141c', borderTop: '1px solid #e8e1d7' }}>
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-4">
+    <footer className="bg-stone-900 text-white">
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <div className="grid gap-12 md:grid-cols-12">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <div 
-                className="flex h-10 w-10 items-center justify-center rounded-full"
-                style={{ backgroundColor: '#fbfaf8' }}
-              >
-                <span className="font-serif text-lg font-semibold" style={{ color: '#14141c' }}>M</span>
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white">
+                <span className="font-serif text-xl font-bold text-stone-900">M</span>
               </div>
               <div>
-                <p className="font-serif text-lg font-semibold" style={{ color: '#fbfaf8' }}>La Maison du Chef</p>
-                <p className="text-[10px] uppercase tracking-[0.2em]" style={{ color: 'rgba(251, 250, 248, 0.6)' }}>Gastronomie connectée</p>
+                <p className="font-serif text-xl font-bold text-white">La Maison du Chef</p>
+                <p className="text-[10px] font-medium uppercase tracking-widest text-stone-400">Gastronomie française</p>
               </div>
             </div>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed" style={{ color: 'rgba(251, 250, 248, 0.7)' }}>
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-stone-400">
               Une expérience gastronomique unique alliant tradition culinaire française 
               et innovation digitale. Découvrez une nouvelle façon de vivre le restaurant.
             </p>
           </div>
 
           {/* Navigation */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: '#fbfaf8' }}>Navigation</h4>
-            <ul className="mt-4 space-y-3">
-              {footerLinks.navigation.map((link) => (
-                <li key={link.href}>
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-500">Navigation</h4>
+            <ul className="mt-6 space-y-4">
+              {[
+                { label: "Accueil", href: "/" },
+                { label: "Notre Carte", href: "/menu" },
+                { label: "Le Restaurant", href: "/restaurant" },
+                { label: "Contact", href: "/contact" },
+              ].map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={link.href}
-                    className="text-sm transition-opacity duration-200 hover:opacity-100"
-                    style={{ color: 'rgba(251, 250, 248, 0.7)' }}
+                    href={item.href}
+                    className="text-sm text-stone-400 transition-colors duration-300 hover:text-white"
                   >
-                    {link.label}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -57,51 +45,50 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: '#fbfaf8' }}>Contact</h4>
-            <ul className="mt-4 space-y-3 text-sm" style={{ color: 'rgba(251, 250, 248, 0.7)' }}>
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-500">Contact</h4>
+            <ul className="mt-6 space-y-4 text-sm text-stone-400">
               <li>
                 <p>12 Rue de la Gastronomie</p>
                 <p>75008 Paris, France</p>
               </li>
               <li>
-                <a href="tel:+33123456789" className="transition-opacity duration-200 hover:opacity-100">
+                <a href="tel:+33123456789" className="transition-colors duration-300 hover:text-white">
                   +33 1 23 45 67 89
                 </a>
               </li>
               <li>
-                <a href="mailto:contact@lamaisonduchef.fr" className="transition-opacity duration-200 hover:opacity-100">
+                <a href="mailto:contact@lamaisonduchef.fr" className="transition-colors duration-300 hover:text-white">
                   contact@lamaisonduchef.fr
                 </a>
               </li>
             </ul>
-            <div className="mt-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: '#fbfaf8' }}>Horaires</p>
-              <p className="mt-2 text-sm" style={{ color: 'rgba(251, 250, 248, 0.7)' }}>Mar - Sam : 12h - 14h30, 19h - 22h30</p>
-              <p className="text-sm" style={{ color: 'rgba(251, 250, 248, 0.7)' }}>Dim - Lun : Fermé</p>
-            </div>
+          </div>
+
+          {/* Hours */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-stone-500">Horaires</h4>
+            <ul className="mt-6 space-y-2 text-sm text-stone-400">
+              <li>Mar - Sam</li>
+              <li>12h - 14h30</li>
+              <li>19h - 22h30</li>
+              <li className="pt-2 text-stone-500">Dim - Lun : Fermé</li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom */}
-        <div 
-          className="mt-12 flex flex-col items-center justify-between gap-4 pt-8 md:flex-row"
-          style={{ borderTop: '1px solid rgba(251, 250, 248, 0.1)' }}
-        >
-          <p className="text-xs" style={{ color: 'rgba(251, 250, 248, 0.6)' }}>
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-stone-800 pt-8 md:flex-row">
+          <p className="text-xs text-stone-500">
             © 2025 La Maison du Chef. Tous droits réservés.
           </p>
-          <div className="flex gap-6">
-            {footerLinks.legal.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs transition-opacity duration-200 hover:opacity-100"
-                style={{ color: 'rgba(251, 250, 248, 0.6)' }}
-              >
-                {link.label}
-              </Link>
-            ))}
+          <div className="flex gap-8">
+            <Link href="/mentions-legales" className="text-xs text-stone-500 transition-colors duration-300 hover:text-white">
+              Mentions légales
+            </Link>
+            <Link href="/confidentialite" className="text-xs text-stone-500 transition-colors duration-300 hover:text-white">
+              Confidentialité
+            </Link>
           </div>
         </div>
       </div>
