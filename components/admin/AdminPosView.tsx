@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import type { AdminOrder } from "@/lib/types";
 import { useWebSocket } from "@/hooks/useWebSocket";
 
-const fallbackOrders: AdminOrder[] = [
+const initialOrders: AdminOrder[] = [
   {
     id: "ord_01",
     tableLabel: "Table 5",
     status: "En cours",
-    updatedAt: new Date().toISOString(),
+    updatedAt: "2025-01-01T12:00:00.000Z",
     items: [
       { id: "1", menuItemId: "m1", name: "Risotto d'orge", price: 19, quantity: 2 },
     ],
@@ -18,14 +18,19 @@ const fallbackOrders: AdminOrder[] = [
     id: "ord_02",
     tableLabel: "Table 12",
     status: "Servi",
-    updatedAt: new Date().toISOString(),
+    updatedAt: "2025-01-01T12:00:00.000Z",
     items: [{ id: "2", menuItemId: "m2", name: "Bar rôti", price: 32, quantity: 1 }],
   },
 ];
 
 export const AdminPosView = () => {
   const { lastEvent, status } = useWebSocket();
-  const [orders, setOrders] = useState<AdminOrder[]>(fallbackOrders);
+  const [orders, setOrders] = useState<AdminOrder[]>(initialOrders);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (lastEvent?.type === "admin:update") {
@@ -67,7 +72,7 @@ export const AdminPosView = () => {
               ))}
             </div>
             <p className="mt-3 text-[11px] text-ink-500">
-              Dernière mise à jour: {new Date(order.updatedAt).toLocaleTimeString("fr-FR")}
+              Dernière mise à jour: {mounted ? new Date(order.updatedAt).toLocaleTimeString("fr-FR") : "--:--:--"}
             </p>
           </div>
         ))}
