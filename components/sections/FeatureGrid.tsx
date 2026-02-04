@@ -16,12 +16,12 @@ export const FeatureGrid = ({ eyebrow, title, features }: FeatureGridProps) => {
       {(eyebrow || title) && (
         <div className="mb-12 text-center">
           {eyebrow && (
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-ink-500">
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               {eyebrow}
             </p>
           )}
           {title && (
-            <h2 className="text-serifs text-balance text-2xl font-semibold text-ink-900 md:text-3xl">
+            <h2 className="font-serif text-balance text-2xl font-medium text-foreground md:text-3xl">
               {title}
             </h2>
           )}
@@ -31,13 +31,13 @@ export const FeatureGrid = ({ eyebrow, title, features }: FeatureGridProps) => {
         {features.map((feature, index) => (
           <div
             key={index}
-            className="rounded-3xl border border-ink-700/10 bg-white p-6 shadow-card transition duration-220 hover:-translate-y-1"
+            className="rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-ink-900 text-pearl-50">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-foreground text-background">
               {feature.icon}
             </div>
-            <h3 className="text-base font-semibold text-ink-900">{feature.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink-600">
+            <h3 className="text-base font-medium text-foreground">{feature.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {feature.description}
             </p>
           </div>

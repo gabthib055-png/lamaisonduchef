@@ -38,10 +38,10 @@ const values = [
 
 export default function RestaurantPage() {
   return (
-    <div className="bg-pearl-50">
+    <div className="bg-background">
       {/* Hero */}
       <section className="px-6 pt-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <HeroSection
             eyebrow="Notre histoire"
             title="Depuis 1987, l'excellence au service du goût"
@@ -53,7 +53,7 @@ export default function RestaurantPage() {
 
       {/* Story Section */}
       <section className="px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <ImageSection
             eyebrow="Le Chef"
             title="Michel Dupont, artisan de la gastronomie"
@@ -67,7 +67,7 @@ export default function RestaurantPage() {
 
       {/* Values */}
       <section className="px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <FeatureGrid
             eyebrow="Nos valeurs"
             title="Ce qui guide notre cuisine"
@@ -78,11 +78,11 @@ export default function RestaurantPage() {
 
       {/* Space Section */}
       <section className="px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <ImageSection
             eyebrow="L'espace"
             title="Un écrin d'élégance au coeur de Paris"
-            description="Notre salle de 40 couverts allie confort contemporain et touches classiques. Lumière tamisée, mobilier en chêne massif et œuvres d'art créent une atmosphère propice à la dégustation et à la conversation."
+            description="Notre salle de 40 couverts allie confort contemporain et touches classiques. Lumière tamisée, mobilier en chêne massif et oeuvres d'art créent une atmosphère propice à la dégustation et à la conversation."
             imageSrc="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800"
             imageAlt="Intérieur du restaurant"
             imagePosition="left"
@@ -92,12 +92,12 @@ export default function RestaurantPage() {
 
       {/* Team Section */}
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-ink-500">
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               Notre équipe
             </p>
-            <h2 className="text-serifs text-balance text-2xl font-semibold text-ink-900 md:text-3xl">
+            <h2 className="font-serif text-balance text-2xl font-medium text-foreground md:text-3xl">
               Des passionnés à votre service
             </h2>
           </div>
@@ -121,18 +121,18 @@ export default function RestaurantPage() {
             ].map((member) => (
               <div
                 key={member.name}
-                className="overflow-hidden rounded-3xl border border-ink-700/10 bg-white shadow-card"
+                className="overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-base font-semibold text-ink-900">{member.name}</h3>
-                  <p className="mt-1 text-sm text-ink-600">{member.role}</p>
+                  <h3 className="text-base font-medium text-foreground">{member.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{member.role}</p>
                 </div>
               </div>
             ))}

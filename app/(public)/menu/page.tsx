@@ -56,10 +56,10 @@ export default function MenuPage() {
   }, [filteredMenu]);
 
   return (
-    <div className="bg-pearl-50">
+    <div className="bg-background">
       {/* Hero */}
       <section className="px-6 pt-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <HeroSection
             eyebrow="Notre carte"
             title="Une cuisine de saison, des saveurs authentiques"
@@ -70,17 +70,17 @@ export default function MenuPage() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-[73px] z-40 border-b border-ink-700/5 bg-pearl-50/95 px-6 py-4 backdrop-blur-sm">
-        <div className="mx-auto max-w-6xl">
+      <section className="sticky top-[73px] z-40 border-b border-border bg-background/95 px-6 py-4 backdrop-blur-sm">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             {/* Category Pills */}
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setActiveCategory(null)}
-                className={`rounded-full px-4 py-2 text-xs font-medium transition duration-160 ${
+                className={`rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
                   activeCategory === null
-                    ? "bg-ink-900 text-pearl-50"
-                    : "border border-ink-700/20 text-ink-600 hover:border-ink-700/40"
+                    ? "bg-foreground text-background"
+                    : "border border-border text-muted-foreground hover:border-foreground"
                 }`}
               >
                 Tous
@@ -89,10 +89,10 @@ export default function MenuPage() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`rounded-full px-4 py-2 text-xs font-medium transition duration-160 ${
+                  className={`rounded-full px-4 py-2 text-xs font-medium transition-all duration-300 ${
                     activeCategory === category
-                      ? "bg-ink-900 text-pearl-50"
-                      : "border border-ink-700/20 text-ink-600 hover:border-ink-700/40"
+                      ? "bg-foreground text-background"
+                      : "border border-border text-muted-foreground hover:border-foreground"
                   }`}
                 >
                   {category}
@@ -103,7 +103,7 @@ export default function MenuPage() {
             {/* Search */}
             <div className="relative">
               <svg
-                className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-400"
+                className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -120,7 +120,7 @@ export default function MenuPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Rechercher un plat..."
-                className="w-full rounded-full border border-ink-700/10 bg-white py-2 pl-10 pr-4 text-sm text-ink-900 placeholder:text-ink-400 focus:border-ink-700/30 focus:outline-none md:w-64"
+                className="w-full rounded-full border border-border bg-card py-2 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-foreground focus:outline-none md:w-64"
               />
             </div>
           </div>
@@ -129,16 +129,16 @@ export default function MenuPage() {
 
       {/* Menu Grid */}
       <section className="px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           {Object.entries(groupedMenu).map(([category, items]) => (
             <div key={category} className="mb-16 last:mb-0">
               {/* Category Header */}
               <div className="mb-8">
-                <h2 className="text-serifs text-2xl font-semibold text-ink-900 md:text-3xl">
+                <h2 className="font-serif text-2xl font-medium text-foreground md:text-3xl">
                   {category}
                 </h2>
                 {categoryDescriptions[category] && (
-                  <p className="mt-2 max-w-2xl text-sm text-ink-600">
+                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
                     {categoryDescriptions[category]}
                   </p>
                 )}
@@ -155,13 +155,13 @@ export default function MenuPage() {
 
           {filteredMenu.length === 0 && (
             <div className="py-16 text-center">
-              <p className="text-ink-500">Aucun plat ne correspond à votre recherche.</p>
+              <p className="text-muted-foreground">Aucun plat ne correspond à votre recherche.</p>
               <button
                 onClick={() => {
                   setActiveCategory(null);
                   setSearchQuery("");
                 }}
-                className="mt-4 text-sm font-medium text-ink-900 underline"
+                className="mt-4 text-sm font-medium text-foreground underline"
               >
                 Réinitialiser les filtres
               </button>

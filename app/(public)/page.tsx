@@ -117,98 +117,75 @@ export default function HomePage() {
       </section>
 
       {/* Featured Dishes */}
-      <section className="bg-white py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-16 text-center">
-            <span className="mb-4 inline-block text-sm font-medium uppercase tracking-widest text-amber-600">
-              Nos créations
-            </span>
-            <h2 className="font-serif text-3xl font-bold text-stone-900 sm:text-4xl md:text-5xl">
-              Les signatures du Chef
-            </h2>
+      <section className="bg-background py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <span className="mb-4 inline-block text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                Une approche globale
+              </span>
+              <h2 className="font-serif text-4xl font-medium text-foreground md:text-5xl">
+                {"Pour un modèle d'avenir"}
+              </h2>
+            </div>
+            <Link
+              href="/menu"
+              className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-foreground/90"
+            >
+              Voir la carte
+            </Link>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             {featuredDishes.map((dish) => (
               <div
                 key={dish.id}
-                className="group overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                className="group relative aspect-[4/5] overflow-hidden rounded-2xl"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={dish.image}
-                    alt={dish.name}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-stone-800 backdrop-blur-sm">
-                      {dish.category}
-                    </span>
-                  </div>
+                <img
+                  src={dish.image}
+                  alt={dish.name}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="mb-2 inline-block text-xs font-medium uppercase tracking-wider text-white/70">
+                    {dish.category}
+                  </span>
+                  <h3 className="text-xl font-medium text-white">{dish.name}</h3>
+                  <p className="mt-2 text-lg font-medium text-white">{dish.price} €</p>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-stone-900">{dish.name}</h3>
-                  <p className="mt-2 line-clamp-2 text-stone-600">{dish.description}</p>
-                  {dish.pairing && (
-                    <p className="mt-4 flex items-center gap-2 text-sm text-stone-500">
-                      <svg className="h-4 w-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      {dish.pairing}
-                    </p>
-                  )}
-                  <div className="mt-6 flex items-center justify-between border-t border-stone-100 pt-4">
-                    <p className="text-2xl font-bold text-amber-600">{dish.price} €</p>
-                  </div>
-                </div>
+                <button className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-foreground">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  </svg>
+                </button>
               </div>
             ))}
-          </div>
-          <div className="mt-16 text-center">
-            <Link
-              href="/menu"
-              className="inline-flex items-center justify-center rounded-full bg-stone-900 px-10 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-stone-800 hover:shadow-xl"
-            >
-              Voir la carte complète
-            </Link>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden bg-stone-900 py-24">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1600&q=80"
-            alt=""
-            className="h-full w-full object-cover"
-          />
-        </div>
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <span className="mb-4 inline-block text-sm font-medium uppercase tracking-widest text-amber-400">
-            Réservation
-          </span>
-          <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            Réservez votre table pour une expérience inoubliable
+      <section className="bg-secondary py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="font-serif text-4xl font-medium text-foreground md:text-5xl">
+            Parlons de votre projet
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-stone-300">
+          <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground">
             Du mardi au samedi, notre équipe vous accueille dans un cadre élégant 
             pour un moment de gastronomie unique.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-amber-600 px-10 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-amber-700 hover:shadow-xl"
+              className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-foreground/90"
             >
-              Réserver maintenant
+              Nous contacter
             </Link>
             <a
               href="tel:+33123456789"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-transparent px-8 py-4 text-sm font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/10"
+              className="inline-flex items-center gap-2 text-sm font-medium text-foreground no-underline transition-colors duration-300 hover:text-muted-foreground"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
               +33 1 23 45 67 89
             </a>
           </div>

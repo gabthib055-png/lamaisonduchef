@@ -30,32 +30,32 @@ export const ImageSection = ({
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
         <div className={contentOrder}>
           {eyebrow && (
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-ink-500">
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
               {eyebrow}
             </p>
           )}
-          <h2 className="text-serifs text-balance text-2xl font-semibold text-ink-900 md:text-3xl">
+          <h2 className="font-serif text-balance text-2xl font-medium text-foreground md:text-3xl">
             {title}
           </h2>
-          <p className="mt-4 text-pretty text-sm leading-relaxed text-ink-600 md:text-base">
+          <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
             {description}
           </p>
           {cta && (
             <div className="mt-6">
               <Link
                 href={cta.href}
-                className="inline-flex rounded-full bg-ink-900 px-6 py-3 text-sm font-semibold text-pearl-50 transition duration-160 hover:bg-ink-800"
+                className="inline-flex rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-foreground/90"
               >
                 {cta.label}
               </Link>
             </div>
           )}
         </div>
-        <div className={`${imageOrder} overflow-hidden rounded-3xl`}>
+        <div className={`${imageOrder} overflow-hidden rounded-2xl`}>
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
       </div>

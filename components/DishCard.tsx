@@ -24,28 +24,32 @@ export const DishCard = ({ item }: DishCardProps) => {
   };
 
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink-700/10 bg-white shadow-card transition duration-220 hover:-translate-y-1">
-      <div className="relative h-40 overflow-hidden">
-        <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={item.image} 
+          alt={item.name} 
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" 
+        />
       </div>
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="flex flex-1 flex-col gap-4 p-6">
         <div>
-          <h4 className="text-base font-semibold text-ink-900">{item.name}</h4>
-          <p className="text-xs text-ink-600">{item.description}</p>
+          <h4 className="text-lg font-medium text-foreground">{item.name}</h4>
+          <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
         </div>
         {item.pairing ? (
-          <div className="rounded-2xl bg-pearl-50 p-3 text-xs text-ink-600">
-            <span className="font-semibold text-ink-800">Accord</span>
-            <p>{item.pairing}</p>
+          <div className="rounded-xl bg-secondary p-4 text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">Accord: </span>
+            {item.pairing}
           </div>
         ) : null}
-        <div className="mt-auto flex items-center justify-between">
-          <p className="text-sm font-semibold text-ink-900">
+        <div className="mt-auto flex items-center justify-between pt-4 border-t border-border">
+          <p className="text-lg font-medium text-foreground">
             {item.price.toFixed(2)} €
           </p>
           <button
             onClick={handleAdd}
-            className="rounded-full bg-ink-900 px-4 py-2 text-xs font-semibold text-pearl-50 transition duration-160 hover:bg-ink-800"
+            className="rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-all duration-300 hover:bg-foreground/90"
           >
             Ajouter
           </button>
