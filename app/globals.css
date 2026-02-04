@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --font-serif: "Playfair Display";
+    --font-sans: "Inter";
+  }
+
+  body {
+    @apply bg-pearl-50 text-ink-950 antialiased;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-serifs {
+    font-family: var(--font-serif), "Times New Roman", serif;
+  }
+
+  .surface-glass {
+    @apply border border-white/70 bg-white/85 backdrop-blur;
+  }
+}
