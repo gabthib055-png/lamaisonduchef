@@ -1,196 +1,592 @@
 import Link from "next/link";
-import menuSeed from "@/data/seed/menu.json";
-import type { MenuItem } from "@/lib/types";
-
-const featuredDishes = (menuSeed as MenuItem[]).slice(0, 3);
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative h-screen">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
-            alt="Restaurant ambiance"
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
+    <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0a', color: '#ffffff', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+      {/* Navigation */}
+      <header style={{ 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        zIndex: 100,
+        padding: '24px 48px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.9), transparent)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <div style={{ 
+            width: '50px', 
+            height: '50px', 
+            borderRadius: '50%', 
+            border: '1px solid rgba(212,175,55,0.6)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '22px',
+            fontWeight: '300',
+            color: '#d4af37'
+          }}>
+            M
+          </div>
+          <div>
+            <div style={{ fontSize: '18px', fontWeight: '500', letterSpacing: '0.05em' }}>La Maison du Chef</div>
+            <div style={{ fontSize: '10px', letterSpacing: '0.35em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Paris</div>
+          </div>
         </div>
-        <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-32 text-center">
-          <h1 className="max-w-5xl font-serif text-5xl font-medium leading-[1.1] text-white sm:text-6xl md:text-7xl lg:text-8xl">
-            La Maison du Chef
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '48px' }}>
+          <Link href="/" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: '500' }}>Accueil</Link>
+          <Link href="/menu" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: '500' }}>La Carte</Link>
+          <Link href="/restaurant" style={{ color: 'rgba(255,255,255,0.8)', textDecoration: 'none', fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: '500' }}>Restaurant</Link>
+          <Link href="/contact" style={{ 
+            padding: '14px 32px',
+            backgroundColor: '#d4af37',
+            color: '#0a0a0a',
+            textDecoration: 'none',
+            fontSize: '11px',
+            fontWeight: '600',
+            letterSpacing: '0.2em',
+            textTransform: 'uppercase'
+          }}>Réserver</Link>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section style={{ 
+        height: '100vh',
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundImage: 'url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=90)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'brightness(0.25)'
+        }} />
+        <div style={{ 
+          position: 'relative', 
+          zIndex: 10, 
+          textAlign: 'center',
+          padding: '0 24px',
+          maxWidth: '1000px'
+        }}>
+          <div style={{ 
+            fontSize: '11px', 
+            letterSpacing: '0.5em', 
+            color: '#d4af37',
+            marginBottom: '35px',
+            textTransform: 'uppercase',
+            fontWeight: '500'
+          }}>
+            Restaurant Gastronomique - Paris 8e
+          </div>
+          <h1 style={{ 
+            fontSize: 'clamp(52px, 9vw, 110px)',
+            fontWeight: '300',
+            lineHeight: '1.05',
+            marginBottom: '35px',
+            letterSpacing: '-0.02em'
+          }}>
+            Une expérience<br />
+            <span style={{ fontStyle: 'italic', fontWeight: '400' }}>inoubliable</span>
           </h1>
-          <p className="mx-auto mt-8 max-w-xl text-base text-white/80 sm:text-lg">
-            Une expérience gastronomique connectée au coeur de Paris. 
-            Tradition française et innovation digitale.
+          <p style={{ 
+            fontSize: '18px',
+            lineHeight: '1.9',
+            color: 'rgba(255,255,255,0.7)',
+            maxWidth: '580px',
+            margin: '0 auto 55px'
+          }}>
+            Découvrez une cuisine raffinée où tradition française et créativité 
+            se rencontrent pour sublimer chaque instant.
           </p>
-          <div className="mt-12 flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/menu"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-medium text-foreground no-underline transition-all duration-300 hover:bg-white/90"
-            >
+          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/menu" style={{
+              padding: '20px 48px',
+              backgroundColor: 'transparent',
+              border: '1px solid rgba(255,255,255,0.35)',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '11px',
+              fontWeight: '500',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              transition: 'all 0.3s ease'
+            }}>
               Découvrir la carte
             </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/50 bg-transparent px-8 py-4 text-sm font-medium text-white no-underline transition-all duration-300 hover:bg-white/10"
-            >
+            <Link href="/contact" style={{
+              padding: '20px 48px',
+              backgroundColor: '#d4af37',
+              border: '1px solid #d4af37',
+              color: '#0a0a0a',
+              textDecoration: 'none',
+              fontSize: '11px',
+              fontWeight: '600',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase',
+              transition: 'all 0.3s ease'
+            }}>
               Réserver une table
             </Link>
           </div>
         </div>
+        {/* Scroll indicator */}
+        <div style={{
+          position: 'absolute',
+          bottom: '50px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '12px'
+        }}>
+          <span style={{ fontSize: '10px', letterSpacing: '0.4em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase' }}>Scroll</span>
+          <div style={{ width: '1px', height: '70px', background: 'linear-gradient(to bottom, rgba(212,175,55,0.6), transparent)' }} />
+        </div>
       </section>
 
-      {/* Features Section */}
-      <section className="bg-background py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-20 max-w-2xl">
-            <span className="mb-4 inline-block text-xs font-medium uppercase tracking-widest text-muted-foreground">
-              Nos engagements principaux
-            </span>
-            <h2 className="font-serif text-4xl font-medium text-foreground md:text-5xl">
-              Allier innovation, durabilité et efficacité
-            </h2>
+      {/* Intro Section */}
+      <section style={{ 
+        padding: '180px 48px',
+        backgroundColor: '#0a0a0a',
+        display: 'flex',
+        justifyContent: 'center'
+      }}>
+        <div style={{ maxWidth: '850px', textAlign: 'center' }}>
+          <div style={{ 
+            fontSize: '11px', 
+            letterSpacing: '0.5em', 
+            color: '#d4af37',
+            marginBottom: '35px',
+            textTransform: 'uppercase',
+            fontWeight: '500'
+          }}>
+            Notre philosophie
           </div>
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
-            {[
-              {
-                num: "01",
-                title: "Produits d'exception",
-                description: "Sélection rigoureuse de produits frais et locaux, issus de nos partenaires producteurs.",
-              },
-              {
-                num: "02",
-                title: "Chef étoilé",
-                description: "Notre chef perpétue l'excellence de la cuisine française avec passion et créativité.",
-              },
-              {
-                num: "03",
-                title: "Cadre raffiné",
-                description: "Un écrin d'élégance au coeur de Paris pour des moments inoubliables.",
-              }
-            ].map((feature, index) => (
-              <div 
-                key={index} 
-                className="group bg-card p-10 transition-all duration-500 hover:bg-secondary"
-              >
-                <span className="mb-8 block font-serif text-5xl font-light text-muted-foreground/30">{feature.num}</span>
-                <h3 className="mb-4 text-xl font-medium text-foreground">{feature.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{feature.description}</p>
+          <h2 style={{ 
+            fontSize: 'clamp(34px, 5vw, 60px)',
+            fontWeight: '300',
+            lineHeight: '1.25',
+            marginBottom: '45px'
+          }}>
+            {"L'art de sublimer les produits d'exception"}
+          </h2>
+          <p style={{ 
+            fontSize: '17px',
+            lineHeight: '2.1',
+            color: 'rgba(255,255,255,0.6)'
+          }}>
+            Depuis 1987, La Maison du Chef perpétue une tradition culinaire exigeante. 
+            Notre chef sélectionne chaque jour les meilleurs produits auprès de producteurs 
+            locaux passionnés pour créer une cuisine authentique et raffinée.
+          </p>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section style={{ 
+        padding: '0 48px 180px',
+        backgroundColor: '#0a0a0a'
+      }}>
+        <div style={{ 
+          maxWidth: '1400px', 
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+          gap: '2px',
+          backgroundColor: 'rgba(212,175,55,0.2)'
+        }}>
+          {[
+            {
+              number: '01',
+              title: 'Produits Nobles',
+              description: 'Sélection rigoureuse auprès de producteurs locaux, pêcheurs et maraîchers engagés dans une démarche durable.'
+            },
+            {
+              number: '02',
+              title: 'Savoir-Faire',
+              description: 'Techniques traditionnelles françaises et créativité contemporaine pour des plats signatures uniques.'
+            },
+            {
+              number: '03',
+              title: 'Accords Parfaits',
+              description: 'Notre sommelier compose des accords mets-vins exceptionnels pour sublimer chaque bouchée.'
+            }
+          ].map((feature) => (
+            <div key={feature.number} style={{
+              padding: '60px 50px',
+              backgroundColor: '#0a0a0a'
+            }}>
+              <div style={{ 
+                fontSize: '56px',
+                fontWeight: '200',
+                color: 'rgba(212,175,55,0.25)',
+                marginBottom: '35px',
+                lineHeight: '1'
+              }}>
+                {feature.number}
               </div>
-            ))}
-          </div>
+              <h3 style={{ 
+                fontSize: '26px',
+                fontWeight: '400',
+                marginBottom: '20px',
+                letterSpacing: '0.01em'
+              }}>
+                {feature.title}
+              </h3>
+              <p style={{ 
+                fontSize: '15px',
+                lineHeight: '1.9',
+                color: 'rgba(255,255,255,0.55)'
+              }}>
+                {feature.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="relative overflow-hidden">
-        <div className="grid lg:grid-cols-2">
-          <div className="relative aspect-square lg:aspect-auto">
-            <img
-              src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1000&q=80"
-              alt="Chef en cuisine"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+      {/* Image + Text Section */}
+      <section style={{ 
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        minHeight: '100vh'
+      }}>
+        <div style={{
+          backgroundImage: 'url(https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1200&q=90)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }} />
+        <div style={{
+          backgroundColor: '#111111',
+          padding: '120px 90px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center'
+        }}>
+          <div style={{ 
+            fontSize: '11px', 
+            letterSpacing: '0.5em', 
+            color: '#d4af37',
+            marginBottom: '30px',
+            textTransform: 'uppercase',
+            fontWeight: '500'
+          }}>
+            Le Chef
           </div>
-          <div className="flex flex-col justify-center bg-foreground px-8 py-20 text-background md:px-16 lg:px-20">
-            <span className="mb-6 text-xs font-medium uppercase tracking-widest text-background/50">
-              Notre engagement
-            </span>
-            <h2 className="font-serif text-3xl font-medium leading-tight text-background md:text-4xl lg:text-5xl">
-              La Maison du Chef se veut acteur de la transition culinaire
-            </h2>
-            <p className="mt-8 text-base leading-relaxed text-background/70">
-              Depuis 1987, nous perpétuons l'art de la cuisine française avec des produits 
-              de saison sélectionnés auprès de producteurs locaux. Notre chef propose des 
-              solutions durables au service des palais de demain.
-            </p>
-            <Link
-              href="/restaurant"
-              className="mt-10 inline-flex w-fit items-center justify-center rounded-full border border-background bg-transparent px-8 py-3 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-background hover:text-foreground"
-            >
-              Notre engagement
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Dishes */}
-      <section className="bg-background py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <h2 style={{ 
+            fontSize: 'clamp(38px, 4vw, 56px)',
+            fontWeight: '300',
+            lineHeight: '1.15',
+            marginBottom: '35px'
+          }}>
+            Michel Dupont
+          </h2>
+          <p style={{ 
+            fontSize: '16px',
+            lineHeight: '2',
+            color: 'rgba(255,255,255,0.6)',
+            marginBottom: '25px'
+          }}>
+            Formé auprès des plus grands noms de la gastronomie française, 
+            Michel Dupont a développé une signature culinaire unique, 
+            alliant respect des traditions et audace créative.
+          </p>
+          <p style={{ 
+            fontSize: '16px',
+            lineHeight: '2',
+            color: 'rgba(255,255,255,0.6)',
+            marginBottom: '50px'
+          }}>
+            {"Sa philosophie : magnifier les produits d'exception sans jamais les dénaturer."}
+          </p>
+          <div style={{ display: 'flex', gap: '70px' }}>
             <div>
-              <span className="mb-4 inline-block text-xs font-medium uppercase tracking-widest text-muted-foreground">
-                Une approche globale
-              </span>
-              <h2 className="font-serif text-4xl font-medium text-foreground md:text-5xl">
-                {"Pour un modèle d'avenir"}
+              <div style={{ fontSize: '48px', fontWeight: '200', color: '#d4af37', lineHeight: '1' }}>2</div>
+              <div style={{ fontSize: '11px', letterSpacing: '0.25em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginTop: '10px' }}>Étoiles Michelin</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '48px', fontWeight: '200', color: '#d4af37', lineHeight: '1' }}>37</div>
+              <div style={{ fontSize: '11px', letterSpacing: '0.25em', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', marginTop: '10px' }}>{"Années d'excellence"}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Preview */}
+      <section style={{ 
+        padding: '180px 48px',
+        backgroundColor: '#0a0a0a'
+      }}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+          <div style={{ 
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            marginBottom: '90px',
+            flexWrap: 'wrap',
+            gap: '30px'
+          }}>
+            <div>
+              <div style={{ 
+                fontSize: '11px', 
+                letterSpacing: '0.5em', 
+                color: '#d4af37',
+                marginBottom: '20px',
+                textTransform: 'uppercase',
+                fontWeight: '500'
+              }}>
+                La Carte
+              </div>
+              <h2 style={{ 
+                fontSize: 'clamp(38px, 4vw, 60px)',
+                fontWeight: '300'
+              }}>
+                Nos créations
               </h2>
             </div>
-            <Link
-              href="/menu"
-              className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-foreground/90"
-            >
-              Voir la carte
+            <Link href="/menu" style={{
+              padding: '18px 45px',
+              border: '1px solid rgba(255,255,255,0.25)',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '11px',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              fontWeight: '500'
+            }}>
+              Voir la carte complète
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {featuredDishes.map((dish) => (
-              <div
-                key={dish.id}
-                className="group relative aspect-[4/5] overflow-hidden rounded-2xl"
-              >
-                <img
-                  src={dish.image}
-                  alt={dish.name}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <span className="mb-2 inline-block text-xs font-medium uppercase tracking-wider text-white/70">
-                    {dish.category}
-                  </span>
-                  <h3 className="text-xl font-medium text-white">{dish.name}</h3>
-                  <p className="mt-2 text-lg font-medium text-white">{dish.price} €</p>
+
+          <div style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+            gap: '35px'
+          }}>
+            {[
+              {
+                name: 'Saint-Jacques Snackées',
+                description: 'Purée de céleri-rave, émulsion au yuzu, caviar Osciètre',
+                price: '48',
+                image: 'https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=800&q=90'
+              },
+              {
+                name: 'Homard Bleu de Bretagne',
+                description: 'Bisque légère infusée au combava, légumes de saison',
+                price: '75',
+                image: 'https://images.unsplash.com/photo-1553247407-23251ce81f59?w=800&q=90'
+              },
+              {
+                name: 'Pigeon en Croûte de Sel',
+                description: 'Foie gras poêlé, sauce Périgueux aux truffes',
+                price: '62',
+                image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=90'
+              }
+            ].map((dish, index) => (
+              <div key={index} style={{ position: 'relative', overflow: 'hidden' }}>
+                <div style={{
+                  aspectRatio: '4/5',
+                  backgroundImage: `url(${dish.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  marginBottom: '28px'
+                }} />
+                <div style={{ 
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                  gap: '20px'
+                }}>
+                  <div>
+                    <h3 style={{ 
+                      fontSize: '22px',
+                      fontWeight: '400',
+                      marginBottom: '10px'
+                    }}>
+                      {dish.name}
+                    </h3>
+                    <p style={{ 
+                      fontSize: '14px',
+                      color: 'rgba(255,255,255,0.5)',
+                      lineHeight: '1.6'
+                    }}>
+                      {dish.description}
+                    </p>
+                  </div>
+                  <div style={{ 
+                    fontSize: '22px',
+                    color: '#d4af37',
+                    fontWeight: '300',
+                    whiteSpace: 'nowrap'
+                  }}>
+                    {dish.price} €
+                  </div>
                 </div>
-                <button className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-foreground">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                  </svg>
-                </button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-secondary py-32">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="font-serif text-4xl font-medium text-foreground md:text-5xl">
-            Parlons de votre projet
+      {/* Reservation CTA */}
+      <section style={{ 
+        padding: '180px 48px',
+        backgroundColor: '#111111',
+        textAlign: 'center'
+      }}>
+        <div style={{ maxWidth: '750px', margin: '0 auto' }}>
+          <div style={{ 
+            fontSize: '11px', 
+            letterSpacing: '0.5em', 
+            color: '#d4af37',
+            marginBottom: '35px',
+            textTransform: 'uppercase',
+            fontWeight: '500'
+          }}>
+            Réservation
+          </div>
+          <h2 style={{ 
+            fontSize: 'clamp(38px, 5vw, 64px)',
+            fontWeight: '300',
+            lineHeight: '1.15',
+            marginBottom: '35px'
+          }}>
+            Réservez votre table
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-base text-muted-foreground">
-            Du mardi au samedi, notre équipe vous accueille dans un cadre élégant 
-            pour un moment de gastronomie unique.
+          <p style={{ 
+            fontSize: '17px',
+            lineHeight: '2',
+            color: 'rgba(255,255,255,0.6)',
+            marginBottom: '55px'
+          }}>
+            Du mardi au samedi, notre équipe vous accueille dans un cadre 
+            élégant et intimiste pour un moment de gastronomie unique.
           </p>
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-foreground px-8 py-4 text-sm font-medium text-background no-underline transition-all duration-300 hover:bg-foreground/90"
-            >
-              Nous contacter
+          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contact" style={{
+              padding: '22px 55px',
+              backgroundColor: '#d4af37',
+              color: '#0a0a0a',
+              textDecoration: 'none',
+              fontSize: '11px',
+              fontWeight: '600',
+              letterSpacing: '0.25em',
+              textTransform: 'uppercase'
+            }}>
+              Réserver en ligne
             </Link>
-            <a
-              href="tel:+33123456789"
-              className="inline-flex items-center gap-2 text-sm font-medium text-foreground no-underline transition-colors duration-300 hover:text-muted-foreground"
-            >
+            <a href="tel:+33123456789" style={{
+              padding: '22px 55px',
+              border: '1px solid rgba(255,255,255,0.25)',
+              color: '#ffffff',
+              textDecoration: 'none',
+              fontSize: '11px',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              fontWeight: '500'
+            }}>
               +33 1 23 45 67 89
             </a>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer style={{ 
+        padding: '100px 48px 60px',
+        backgroundColor: '#0a0a0a',
+        borderTop: '1px solid rgba(255,255,255,0.08)'
+      }}>
+        <div style={{ 
+          maxWidth: '1400px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: '2fr 1fr 1fr 1fr',
+          gap: '80px'
+        }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '30px' }}>
+              <div style={{ 
+                width: '50px', 
+                height: '50px', 
+                borderRadius: '50%', 
+                border: '1px solid rgba(212,175,55,0.5)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '22px',
+                fontWeight: '300',
+                color: '#d4af37'
+              }}>
+                M
+              </div>
+              <div>
+                <div style={{ fontSize: '18px', fontWeight: '500', letterSpacing: '0.05em' }}>La Maison du Chef</div>
+                <div style={{ fontSize: '10px', letterSpacing: '0.35em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Restaurant Gastronomique</div>
+              </div>
+            </div>
+            <p style={{ fontSize: '14px', lineHeight: '1.9', color: 'rgba(255,255,255,0.5)', maxWidth: '380px' }}>
+              Une expérience gastronomique unique au coeur de Paris, 
+              où tradition et modernité se rencontrent depuis 1987.
+            </p>
+          </div>
+          <div>
+            <h4 style={{ fontSize: '11px', letterSpacing: '0.25em', marginBottom: '30px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontWeight: '600' }}>Navigation</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              <Link href="/" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '14px' }}>Accueil</Link>
+              <Link href="/menu" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '14px' }}>La Carte</Link>
+              <Link href="/restaurant" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '14px' }}>Le Restaurant</Link>
+              <Link href="/contact" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: '14px' }}>Contact</Link>
+            </div>
+          </div>
+          <div>
+            <h4 style={{ fontSize: '11px', letterSpacing: '0.25em', marginBottom: '30px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontWeight: '600' }}>Contact</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px', color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>
+              <p>12 Rue de la Gastronomie<br />75008 Paris</p>
+              <a href="tel:+33123456789" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>+33 1 23 45 67 89</a>
+              <a href="mailto:contact@lamaisonduchef.fr" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>contact@lamaisonduchef.fr</a>
+            </div>
+          </div>
+          <div>
+            <h4 style={{ fontSize: '11px', letterSpacing: '0.25em', marginBottom: '30px', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', fontWeight: '600' }}>Horaires</h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>
+              <p>Mardi - Samedi</p>
+              <p>12h00 - 14h30</p>
+              <p>19h00 - 22h30</p>
+              <p style={{ marginTop: '12px', color: 'rgba(255,255,255,0.35)' }}>Dimanche & Lundi : Fermé</p>
+            </div>
+          </div>
+        </div>
+        <div style={{ 
+          maxWidth: '1400px',
+          margin: '70px auto 0',
+          paddingTop: '35px',
+          borderTop: '1px solid rgba(255,255,255,0.08)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          color: 'rgba(255,255,255,0.3)',
+          fontSize: '12px',
+          flexWrap: 'wrap',
+          gap: '20px'
+        }}>
+          <p>© 2025 La Maison du Chef. Tous droits réservés.</p>
+          <div style={{ display: 'flex', gap: '35px' }}>
+            <Link href="/mentions-legales" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Mentions légales</Link>
+            <Link href="/confidentialite" style={{ color: 'rgba(255,255,255,0.3)', textDecoration: 'none' }}>Confidentialité</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
