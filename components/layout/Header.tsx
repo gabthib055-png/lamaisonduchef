@@ -14,16 +14,22 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
+    <header 
+      className="sticky top-0 z-50 backdrop-blur-md"
+      style={{ backgroundColor: 'rgba(251, 250, 248, 0.95)', borderBottom: '1px solid rgba(232, 225, 215, 0.5)' }}
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 no-underline">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
-            <span className="font-serif text-lg font-semibold text-primary-foreground">M</span>
+        <Link href="/" className="flex items-center gap-3">
+          <div 
+            className="flex h-10 w-10 items-center justify-center rounded-full"
+            style={{ backgroundColor: '#14141c' }}
+          >
+            <span className="font-serif text-lg font-semibold" style={{ color: '#fbfaf8' }}>M</span>
           </div>
           <div className="hidden sm:block">
-            <p className="font-serif text-lg font-semibold text-foreground">La Maison du Chef</p>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Gastronomie connectée</p>
+            <p className="font-serif text-lg font-semibold" style={{ color: '#14141c' }}>La Maison du Chef</p>
+            <p className="text-[10px] uppercase tracking-[0.2em]" style={{ color: '#636376' }}>Gastronomie connectée</p>
           </div>
         </Link>
 
@@ -33,7 +39,8 @@ export const Header = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-muted-foreground no-underline transition-colors duration-200 hover:text-foreground"
+              className="text-sm font-medium transition-colors duration-200 hover:opacity-80"
+              style={{ color: '#636376' }}
             >
               {item.label}
             </Link>
@@ -44,7 +51,8 @@ export const Header = () => {
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href="/contact"
-            className="rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground no-underline transition-colors duration-200 hover:bg-primary/90"
+            className="rounded-full px-5 py-2.5 text-xs font-semibold transition-opacity duration-200 hover:opacity-90"
+            style={{ backgroundColor: '#14141c', color: '#fbfaf8' }}
           >
             Réserver une table
           </Link>
@@ -53,11 +61,13 @@ export const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-transparent md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full md:hidden"
+          style={{ border: '1px solid #e8e1d7', backgroundColor: 'transparent' }}
           aria-label="Menu"
         >
           <svg
-            className="h-5 w-5 text-foreground"
+            className="h-5 w-5"
+            style={{ color: '#14141c' }}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -73,14 +83,18 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
+        <div 
+          className="px-6 py-4 md:hidden"
+          style={{ borderTop: '1px solid #e8e1d7', backgroundColor: '#fbfaf8' }}
+        >
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-muted-foreground no-underline transition-colors duration-200 hover:text-foreground"
+                className="text-sm font-medium transition-colors duration-200"
+                style={{ color: '#636376' }}
               >
                 {item.label}
               </Link>
@@ -88,7 +102,8 @@ export const Header = () => {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 rounded-full bg-primary px-5 py-2.5 text-center text-xs font-semibold text-primary-foreground no-underline"
+              className="mt-2 rounded-full px-5 py-2.5 text-center text-xs font-semibold"
+              style={{ backgroundColor: '#14141c', color: '#fbfaf8' }}
             >
               Réserver une table
             </Link>

@@ -4,19 +4,67 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui;
   
-  --color-background: #fbfaf8;
-  --color-foreground: #0b0b0f;
-  --color-card: #ffffff;
-  --color-card-foreground: #0b0b0f;
-  --color-primary: #14141c;
-  --color-primary-foreground: #fbfaf8;
-  --color-secondary: #f5f2ed;
-  --color-secondary-foreground: #14141c;
-  --color-muted: #f5f2ed;
-  --color-muted-foreground: #636376;
-  --color-accent: #c9a87c;
-  --color-accent-foreground: #14141c;
-  --color-border: #e8e1d7;
+  --color-background: 251 250 248;
+  --color-foreground: 11 11 15;
+  --color-card: 255 255 255;
+  --color-card-foreground: 11 11 15;
+  --color-primary: 20 20 28;
+  --color-primary-foreground: 251 250 248;
+  --color-secondary: 245 242 237;
+  --color-secondary-foreground: 20 20 28;
+  --color-muted: 245 242 237;
+  --color-muted-foreground: 99 99 118;
+  --color-accent: 201 168 124;
+  --color-accent-foreground: 20 20 28;
+  --color-border: 232 225 215;
+  --color-destructive: 239 68 68;
+  --color-destructive-foreground: 255 255 255;
   
   --radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
 }
