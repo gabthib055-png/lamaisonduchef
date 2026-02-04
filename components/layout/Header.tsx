@@ -14,16 +14,16 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-700/5 bg-pearl-50/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-ink-900">
-            <span className="text-serifs text-lg font-semibold text-pearl-50">M</span>
+        <Link href="/" className="flex items-center gap-3 no-underline">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+            <span className="font-serif text-lg font-semibold text-primary-foreground">M</span>
           </div>
           <div className="hidden sm:block">
-            <p className="text-serifs text-lg font-semibold text-ink-900">La Maison du Chef</p>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-ink-500">Gastronomie connectée</p>
+            <p className="font-serif text-lg font-semibold text-foreground">La Maison du Chef</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Gastronomie connectée</p>
           </div>
         </Link>
 
@@ -33,7 +33,7 @@ export const Header = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-ink-700 transition duration-160 hover:text-ink-900"
+              className="text-sm font-medium text-muted-foreground no-underline transition-colors duration-200 hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -43,8 +43,8 @@ export const Header = () => {
         {/* CTA Button */}
         <div className="hidden items-center gap-4 md:flex">
           <Link
-            href="/menu"
-            className="rounded-full bg-ink-900 px-5 py-2.5 text-xs font-semibold text-pearl-50 transition duration-160 hover:bg-ink-800"
+            href="/contact"
+            className="rounded-full bg-primary px-5 py-2.5 text-xs font-semibold text-primary-foreground no-underline transition-colors duration-200 hover:bg-primary/90"
           >
             Réserver une table
           </Link>
@@ -53,11 +53,11 @@ export const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-ink-700/10 md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-transparent md:hidden"
           aria-label="Menu"
         >
           <svg
-            className="h-5 w-5 text-ink-700"
+            className="h-5 w-5 text-foreground"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -73,22 +73,22 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="border-t border-ink-700/5 bg-pearl-50 px-6 py-4 md:hidden">
+        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-medium text-ink-700 transition duration-160 hover:text-ink-900"
+                className="text-sm font-medium text-muted-foreground no-underline transition-colors duration-200 hover:text-foreground"
               >
                 {item.label}
               </Link>
             ))}
             <Link
-              href="/menu"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-2 rounded-full bg-ink-900 px-5 py-2.5 text-center text-xs font-semibold text-pearl-50"
+              className="mt-2 rounded-full bg-primary px-5 py-2.5 text-center text-xs font-semibold text-primary-foreground no-underline"
             >
               Réserver une table
             </Link>

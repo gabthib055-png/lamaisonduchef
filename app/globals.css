@@ -4,53 +4,19 @@
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui;
   
-  --color-ink-50: #f5f5f7;
-  --color-ink-100: #e8e8ec;
-  --color-ink-200: #d1d1d9;
-  --color-ink-300: #a9a9b8;
-  --color-ink-400: #7e7e91;
-  --color-ink-500: #636376;
-  --color-ink-600: #4d4d5f;
-  --color-ink-700: #2a2b38;
-  --color-ink-800: #1f202b;
-  --color-ink-900: #14141c;
-  --color-ink-950: #0b0b0f;
+  --color-background: #fbfaf8;
+  --color-foreground: #0b0b0f;
+  --color-card: #ffffff;
+  --color-card-foreground: #0b0b0f;
+  --color-primary: #14141c;
+  --color-primary-foreground: #fbfaf8;
+  --color-secondary: #f5f2ed;
+  --color-secondary-foreground: #14141c;
+  --color-muted: #f5f2ed;
+  --color-muted-foreground: #636376;
+  --color-accent: #c9a87c;
+  --color-accent-foreground: #14141c;
+  --color-border: #e8e1d7;
   
-  --color-pearl-50: #fbfaf8;
-  --color-pearl-100: #f5f2ed;
-  --color-pearl-200: #e8e1d7;
-  --color-pearl-300: #d9cbbd;
-  --color-pearl-400: #c3af9b;
-  --color-pearl-500: #a78a73;
-  
-  --color-ember-400: #f97316;
-  --color-ember-500: #ea580c;
-  --color-ember-600: #c2410c;
-  
-  --shadow-glow: 0 10px 30px rgba(234, 88, 12, 0.25);
-  --shadow-card: 0 24px 60px rgba(15, 15, 20, 0.16);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--color-pearl-50);
-  color: var(--color-ink-950);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.text-serifs {
-  font-family: var(--font-serif);
-}
-
-.surface-glass {
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
+  --radius: 0.75rem;
 }
