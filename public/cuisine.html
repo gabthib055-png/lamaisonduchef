@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reception Cuisine</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body data-channel="cuisine">
+    <header>
+      <h1>Reception Cuisine</h1>
+    </header>
+    <main>
+      <p class="status" id="connection-status">Connexion...</p>
+
+      <div class="section-title">
+        <span>Commandes en cours</span>
+        <span class="pill" id="active-count">0</span>
+      </div>
+      <div id="orders-active" class="grid"></div>
+      <div id="orders-active-empty" class="empty" hidden>
+        Aucune commande en cours.
+      </div>
+
+      <div class="section-title">
+        <span>Terminees</span>
+        <span class="pill" id="completed-count">0</span>
+      </div>
+      <div id="orders-completed" class="grid"></div>
+      <div id="orders-completed-empty" class="empty" hidden>
+        Aucune commande terminee.
+      </div>
+    </main>
+
+    <script src="/js/reception.js"></script>
+  </body>
+</html>

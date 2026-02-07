@@ -24,3 +24,21 @@ Site web pour un restaurant gastronomique haut de gamme.
 - Sobre
 - Luxe
 - Moderne
+
+## Temps reel (WebSocket)
+
+L'application inclut un serveur Node.js pour simuler la reception des
+commandes en temps reel.
+
+### Demarrer
+
+```bash
+npm install
+npm start
+```
+
+### Pages utiles
+
+- `/` : page client de test (boutons "Envoyer en cuisine" / "Envoyer au bar")
+- `/cuisine` : reception cuisine
+- `/bar` : reception bar
