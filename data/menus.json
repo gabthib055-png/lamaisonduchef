@@ -1,0 +1,138 @@
+{
+  "updatedAt": "2026-02-01",
+  "menus": [
+    {
+      "id": "degustation",
+      "name": {
+        "fr": "Menu degustation signature",
+        "en": "Signature tasting menu"
+      },
+      "price": "195 EUR",
+      "description": {
+        "fr": "7 services, evolue selon le marche, accords possibles.",
+        "en": "7 courses, market-driven, optional pairings."
+      },
+      "items": [
+        {
+          "name": {
+            "fr": "Huitre speciale, condiment iodise",
+            "en": "Special oyster, seaweed condiment"
+          },
+          "desc": {
+            "fr": "Gel marine, herbes fraiches, citron noir.",
+            "en": "Marine gel, fresh herbs, black lemon."
+          }
+        },
+        {
+          "name": {
+            "fr": "Tourteau, bouillon vegetal",
+            "en": "Crab, vegetal broth"
+          },
+          "desc": {
+            "fr": "Fenouil, poire confite, vinaigre doux.",
+            "en": "Fennel, candied pear, mild vinegar."
+          }
+        },
+        {
+          "name": {
+            "fr": "Volaille fermiere, jus truffe",
+            "en": "Free-range poultry, truffle jus"
+          },
+          "desc": {
+            "fr": "Topinambour, creme de noisette.",
+            "en": "Jerusalem artichoke, hazelnut cream."
+          }
+        },
+        {
+          "name": {
+            "fr": "Dessert cacao, fleur de sel",
+            "en": "Cocoa dessert, fleur de sel"
+          },
+          "desc": {
+            "fr": "Ganache, sorbet cacao, eclats croustillants.",
+            "en": "Ganache, cocoa sorbet, crunchy shards."
+          }
+        }
+      ]
+    },
+    {
+      "id": "saisonnier",
+      "name": {
+        "fr": "Carte saisonniere",
+        "en": "Seasonal menu"
+      },
+      "price": "125 EUR",
+      "description": {
+        "fr": "4 services pour un dejeuner ou un diner plus court.",
+        "en": "4 courses for a shorter lunch or dinner."
+      },
+      "items": [
+        {
+          "name": {
+            "fr": "Legumes du moment, bouillon clair",
+            "en": "Seasonal vegetables, clear broth"
+          },
+          "desc": {
+            "fr": "Racines confites, huile d'herbes.",
+            "en": "Candied roots, herb oil."
+          }
+        },
+        {
+          "name": {
+            "fr": "Poisson sauvage, beurre mousseux",
+            "en": "Wild fish, foaming butter"
+          },
+          "desc": {
+            "fr": "Chou kale, pomme verte, citron.",
+            "en": "Kale, green apple, lemon."
+          }
+        },
+        {
+          "name": {
+            "fr": "Veau de lait, asperge",
+            "en": "Milk-fed veal, asparagus"
+          },
+          "desc": {
+            "fr": "Jus court, poivre timut.",
+            "en": "Short jus, timut pepper."
+          }
+        },
+        {
+          "name": {
+            "fr": "Dessert de saison",
+            "en": "Seasonal dessert"
+          },
+          "desc": {
+            "fr": "Fruits frais, creme legere.",
+            "en": "Fresh fruits, light cream."
+          }
+        }
+      ]
+    }
+  ],
+  "pairing": {
+    "title": {
+      "fr": "Accord mets & vins",
+      "en": "Food and wine pairing"
+    },
+    "price": "95 EUR",
+    "description": {
+      "fr": "Selection de 4 verres rares, option sans alcool disponible.",
+      "en": "Selection of 4 rare glasses, alcohol-free option available."
+    },
+    "options": [
+      {
+        "fr": "Accord vins classiques",
+        "en": "Classic wine pairing"
+      },
+      {
+        "fr": "Accord grands crus",
+        "en": "Grand crus pairing"
+      },
+      {
+        "fr": "Accord sans alcool",
+        "en": "Alcohol-free pairing"
+      }
+    ]
+  }
+}

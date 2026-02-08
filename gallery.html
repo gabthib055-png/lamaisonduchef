@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="fr" data-lang="fr" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n-title="meta.gallery.title">Galerie - La Maison du Chef</title>
+    <meta
+      name="description"
+      data-i18n-meta="meta.gallery.description"
+      content="Plats signatures, salle et experiences."
+    />
+    <link rel="canonical" href="https://lamaisonduchef.fr/gallery.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta
+      property="og:title"
+      data-i18n-meta="meta.gallery.title"
+      content="Galerie - La Maison du Chef"
+    />
+    <meta
+      property="og:description"
+      data-i18n-meta="meta.gallery.description"
+      content="Plats signatures, salle et experiences."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lamaisonduchef.fr/gallery.html" />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80"
+    />
+    <meta name="theme-color" content="#101010" />
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu" data-i18n="ui.skipToContent"
+      >Aller au contenu</a
+    >
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">La Maison du Chef</a>
+        <div class="header-controls">
+          <button
+            class="btn btn-ghost btn-small"
+            type="button"
+            data-lang-toggle
+            aria-label="Changer de langue"
+          >
+            EN
+          </button>
+          <button
+            class="btn btn-ghost btn-small"
+            type="button"
+            data-theme-toggle
+            aria-label="Basculer le mode clair/sombre"
+          >
+            Mode
+          </button>
+          <button
+            class="nav-toggle"
+            type="button"
+            data-nav-toggle
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <span aria-hidden="true"></span>
+            <span class="sr-only" data-i18n="ui.menu">Menu</span>
+          </button>
+        </div>
+        <nav class="nav" id="primary-nav" data-nav>
+          <a href="index.html" data-i18n="nav.home">Accueil</a>
+          <a href="restaurant.html" data-i18n="nav.restaurant">Le Restaurant</a>
+          <a href="chef.html" data-i18n="nav.chef">Le Chef</a>
+          <a href="menu.html" data-i18n="nav.menu">La Carte</a>
+          <a href="gallery.html" aria-current="page" data-i18n="nav.gallery">Galerie</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+          <a class="btn btn-primary" href="reservation.html" data-i18n="cta.reserve"
+            >Reserver</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section class="section" data-animate>
+        <div class="container">
+          <p class="eyebrow" data-i18n="nav.gallery">Galerie</p>
+          <h1 class="section-title" data-i18n="gallery.hero.title">Galerie</h1>
+          <p class="section-intro" data-i18n="gallery.hero.text">
+            Un regard sur nos creations et l'ambiance de la maison.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--contrast" data-animate>
+        <div class="container">
+          <h2 class="section-title" data-i18n="gallery.section.plats">Plats signatures</h2>
+          <div class="gallery-grid">
+            <a
+              href="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Dessert signature"
+              data-caption-en="Signature dessert"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=800&q=80"
+                alt="Dessert signature"
+                data-i18n-alt="image.galleryDessertAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Poisson de saison"
+              data-caption-en="Seasonal fish"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80"
+                alt="Poisson de saison"
+                data-i18n-alt="image.galleryFishAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Amuse-bouche"
+              data-caption-en="Amuse-bouche"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80"
+                alt="Amuse-bouche"
+                data-i18n-alt="image.galleryAmuseAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-animate>
+        <div class="container">
+          <h2 class="section-title" data-i18n="gallery.section.salle">La salle</h2>
+          <div class="gallery-grid">
+            <a
+              href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Salle principale"
+              data-caption-en="Main dining room"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80"
+                alt="Salle principale"
+                data-i18n-alt="image.galleryRoomAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Service en salle"
+              data-caption-en="Dining service"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+                alt="Service en salle"
+                data-i18n-alt="image.galleryServiceAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Details culinaires"
+              data-caption-en="Culinary details"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80"
+                alt="Details culinaires"
+                data-i18n-alt="image.galleryDetailsAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--contrast" data-animate>
+        <div class="container">
+          <h2 class="section-title" data-i18n="gallery.section.experience">L'experience</h2>
+          <div class="gallery-grid">
+            <a
+              href="https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Cocktail d'accueil"
+              data-caption-en="Welcome cocktail"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1481931098730-318b6f776db0?auto=format&fit=crop&w=800&q=80"
+                alt="Cocktail d'accueil"
+                data-i18n-alt="image.galleryCocktailAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1428515613728-6b4607e44363?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Accueil personalisation"
+              data-caption-en="Personalized welcome"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1428515613728-6b4607e44363?auto=format&fit=crop&w=800&q=80"
+                alt="Accueil personnalise"
+                data-i18n-alt="image.galleryWelcomeAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <a
+              href="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80"
+              data-lightbox
+              data-caption-fr="Accords mets & vins"
+              data-caption-en="Food & wine pairing"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
+                alt="Accords mets et vins"
+                data-i18n-alt="image.galleryPairingAlt"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo">La Maison du Chef</div>
+          <p class="section-intro" data-i18n="footer.tagline">
+            Restaurant gastronomique a Paris. Une experience sensorielle signee Chef Adrien Lemaire.
+          </p>
+        </div>
+        <div>
+          <h3 class="serif" data-i18n="footer.addressTitle">Adresse</h3>
+          <p>18 rue des Oliviers<br />75003 Paris</p>
+          <p>+33 1 84 89 12 30</p>
+          <p>bonjour@lamaisonduchef.fr</p>
+        </div>
+        <div>
+          <h3 class="serif" data-i18n="footer.hoursTitle">Horaires</h3>
+          <p data-i18n="footer.hoursWeek">
+            Mar - Ven : 12h00 - 14h00 / 19h00 - 22h00
+          </p>
+          <p data-i18n="footer.hoursWeekend">
+            Sam - Dim : 12h00 - 14h30 / 19h00 - 22h30
+          </p>
+        </div>
+        <div>
+          <h3 class="serif" data-i18n="footer.linksTitle">Liens</h3>
+          <p><a href="index.html" data-i18n="nav.home">Accueil</a></p>
+          <p><a href="restaurant.html" data-i18n="nav.restaurant">Le Restaurant</a></p>
+          <p><a href="chef.html" data-i18n="nav.chef">Le Chef</a></p>
+          <p><a href="menu.html" data-i18n="nav.menu">La Carte</a></p>
+          <p><a href="reservation.html" data-i18n="nav.reservation">Reservation</a></p>
+          <p><a href="contact.html" data-i18n="nav.contact">Contact</a></p>
+          <p><a href="legal.html" data-i18n="nav.legal">Mentions legales</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        (c) 2026 La Maison du Chef. Tous droits reserves.
+      </div>
+    </footer>
+
+    <div class="lightbox" data-lightbox-root aria-hidden="true" role="dialog">
+      <div class="lightbox-content">
+        <button class="btn btn-ghost btn-small" type="button" data-i18n="ui.close">
+          Fermer
+        </button>
+        <img src="" alt="" />
+        <p></p>
+      </div>
+    </div>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
