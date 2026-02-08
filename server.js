@@ -12,7 +12,20 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (_req, res) => {
-  res.sendFile(path.join(__dirname, "public", "commande.html"));
+  res.type("html").send(`
+    <main style="font-family: Arial, sans-serif; padding: 24px;">
+      <h1>Serveur WebSocket actif</h1>
+      <p>Pages disponibles :</p>
+      <ul>
+        <li><a href="/cuisine">/cuisine</a></li>
+        <li><a href="/bar">/bar</a></li>
+      </ul>
+      <p>
+        Integrez le script client WebSocket dans votre page de commande
+        existante pour envoyer les bons en temps reel.
+      </p>
+    </main>
+  `);
 });
 
 app.get("/cuisine", (_req, res) => {

@@ -39,6 +39,45 @@ npm start
 
 ### Pages utiles
 
-- `/` : page client de test (boutons "Envoyer en cuisine" / "Envoyer au bar")
 - `/cuisine` : reception cuisine
 - `/bar` : reception bar
+
+### Integration dans votre page de commande existante (Lovable)
+
+Ajoutez le script ci-dessous dans votre page de commande (celle qui
+contient deja les boutons ou actions "Envoyer en cuisine / au bar").
+
+```html
+<script src="/js/commande-client.js"></script>
+<script>
+  const socket = createCommandeSocket();
+
+  // Exemple d'envoi vers la cuisine
+  function envoyerCuisine(commande) {
+    const result = sendOrderToSocket(socket, {
+      channel: "cuisine",
+      productName: commande.nomProduit,
+      quantity: commande.quantite,
+      comments: commande.commentaires,
+      table: commande.table,
+    });
+    if (!result.ok) {
+      console.error(result.message);
+    }
+  }
+
+  // Exemple d'envoi vers le bar
+  function envoyerBar(commande) {
+    const result = sendOrderToSocket(socket, {
+      channel: "bar",
+      productName: commande.nomProduit,
+      quantity: commande.quantite,
+      comments: commande.commentaires,
+      table: commande.table,
+    });
+    if (!result.ok) {
+      console.error(result.message);
+    }
+  }
+</script>
+```
